@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_cart"
+        android:icon="@drawable/ic_cart"
+        android:title="Cart" />
+
+    <item
+        android:id="@+id/nav_notification"
+        android:icon="@drawable/ic_notification"
+        android:title="Notification" />
+
+    <item
+        android:id="@+id/nav_addressBook"
+        android:icon="@drawable/ic_location"
+        android:title="Address Book" />
+
+    <item
+        android:id="@+id/nav_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="Chat Support" />
+
+    <!--<item
+        android:id="@+id/nav_announcement"
+        android:icon="@drawable/ic_announcement"
+        android:title="Announcement" />-->
+
+    <item
+        android:id="@+id/nav_scan"
+        android:icon="@drawable/ic_scan"
+        android:title="Scan QR Code" />
+
+</menu>

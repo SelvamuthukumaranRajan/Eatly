@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/grey"
+        tools:context=".HomeScreen">
+
+        <include
+            android:id="@+id/layout_actionBar"
+            layout="@layout/ab_home_screen" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_orderCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"/>
+
+        <View
+            android:id="@+id/resultDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:visibility="gone"
+            android:background="@android:color/darker_gray"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/margin_top_10"/>
+
+        <TextView
+            android:id="@+id/tvNoService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We don't Serve in Your Delivery Area.Please Change Your Location"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:padding="@dimen/padding_10"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <Button
+            android:id="@+id/btSelectLocation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:layout_marginLeft="@dimen/padding_left_10"
+            android:layout_marginRight="@dimen/padding_left_10"
+            android:text="Change Location"/>
+
+    </LinearLayout>
+</layout>

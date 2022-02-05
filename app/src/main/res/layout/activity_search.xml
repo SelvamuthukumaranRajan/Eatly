@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        tools:context=".Search">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2.0">
+
+            <LinearLayout
+                android:id="@+id/layoutBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.75"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_left_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/editText_height"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/et_search"
+                        android:drawableLeft="@drawable/ic_search_view"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:hint="Search for an item or store"
+                        android:maxLength="30"
+                        android:padding="@dimen/padding_10"
+                        android:singleLine="true"
+                        android:textColor="@color/darkGrey"
+                        android:textColorHint="@color/darkGrey"
+                        android:textSize="@dimen/textSizeLarge" />
+
+                    <ImageView
+                        android:id="@+id/et_clear"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center|right"
+                        android:layout_margin="@dimen/margin_20"
+                        android:src="@drawable/ic_close"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/emptyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/historyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/cgHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/padding_left_10"
+                        android:paddingTop="@dimen/padding_5"
+                        android:paddingRight="@dimen/padding_right_10"
+                        app:chipSpacingHorizontal="@dimen/padding_10" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="@dimen/margin_top_5"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_left_10"
+                    android:paddingTop="@dimen/padding_5"
+                    android:paddingRight="@dimen/padding_right_10"
+                    android:text="Top up your daily essentials"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeAbsoluteLarge"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_left_10"
+                    android:paddingTop="@dimen/padding_5"
+                    android:paddingRight="@dimen/padding_right_10"
+                    android:text="Trending in your area"
+                    android:textSize="@dimen/textSizeLarge" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgTrending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_left_10"
+                    android:paddingTop="@dimen/padding_5"
+                    android:paddingRight="@dimen/padding_right_10"
+                    app:chipSpacingHorizontal="@dimen/padding_10">
+
+                    <!--<com.google.android.material.chip.Chip
+                        android:id="@+id/chip1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carrot"/>-->
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_essentials"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top_5" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="@dimen/margin_top_10"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_left_10"
+                    android:paddingTop="@dimen/padding_10"
+                    android:paddingRight="@dimen/padding_right_10"
+                    android:text="Top breakfast searches"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeAbsoluteLarge"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_left_10"
+                    android:paddingTop="@dimen/padding_5"
+                    android:paddingRight="@dimen/padding_right_10"
+                    android:text="Trending in your area"
+                    android:textSize="@dimen/textSizeLarge" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_topSearches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top_5"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/loadingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/empty_cart" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="@dimen/margin_top_20"
+                android:text="Items matching your query will appear here"
+                android:textAlignment="center"
+                android:textSize="@dimen/textSizeAbsoluteLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvItems"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_5"
+                        android:text="Items"
+                        android:textColor="@color/teal_200"
+                        android:textSize="@dimen/textSizeAbsoluteLarge" />
+
+                    <View
+                        android:id="@+id/viewSelectedItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/teal_200" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_left_20"
+                        android:padding="@dimen/padding_5"
+                        android:text="Shops"
+                        android:textSize="@dimen/textSizeAbsoluteLarge" />
+
+                    <View
+                        android:id="@+id/viewSelectedShop"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginLeft="@dimen/padding_left_20"
+                        android:background="@color/teal_200"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_searchResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey"
+                android:layout_marginTop="@dimen/margin_top_5"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

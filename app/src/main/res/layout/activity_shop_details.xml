@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ShopDetails"
+        android:focusableInTouchMode="true">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_20"
+            android:src="@drawable/ic_left_arrow" />
+        <TextView
+            android:id="@+id/tvShopName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shop Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/textSizeAbsoluteLarge" />
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:paddingLeft="@dimen/padding_left_10"
+            android:paddingRight="@dimen/padding_right_10"
+            android:textSize="@dimen/textSizeLarge" />
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time . Delivery Type"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/textSizeLarge" />
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/editText_height"
+            android:layout_marginLeft="@dimen/padding_left_20"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:layout_marginRight="@dimen/margin_right_20"
+            android:background="@drawable/et_search"
+            android:hint="Search for items in the store"
+            android:drawableLeft="@drawable/ic_search_view"
+            android:padding="@dimen/padding_10"
+            android:drawablePadding="@dimen/padding_10"
+            android:singleLine="true"
+            android:textColor="@color/darkGrey"
+            android:textColorHint="@color/darkGrey"
+            android:textSize="@dimen/textSizeLarge" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/margin_top_10"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_top_10">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_categoryResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+            <LinearLayout
+                android:id="@+id/cartLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/padding_10"
+                android:orientation="horizontal"
+                android:weightSum="3.0"
+                android:visibility="gone"
+                android:layout_gravity="bottom">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:id="@+id/tvCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="1 item"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textSizeLarge"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/padding_10"
+                        android:drawablePadding="@dimen/padding_20"
+                        android:drawableLeft="@drawable/ic_cart"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1.0">
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="₹ 38"
+                        android:textColor="@color/teal_200"
+                        android:textSize="@dimen/textSizeLarge"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/padding_10" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.0">
+                    <Button
+                        android:id="@+id/btCart"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="@dimen/margin_5"
+                        android:background="@drawable/rounded_white_button"
+                        android:text="View Cart"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

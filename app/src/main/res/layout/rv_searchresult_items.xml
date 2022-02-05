@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_5"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_5">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_veg"
+            android:drawablePadding="@dimen/padding_10"
+            android:padding="@dimen/padding_5"
+            android:text="Dish name"
+            android:maxWidth="200dp"
+            android:maxLines="2"
+            android:textSize="@dimen/textSizeAbsoluteLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_5"
+                    android:text="Price"
+                    android:textSize="@dimen/textSizeLarge" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btAdd"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/rounded_white_button"
+                    android:drawableLeft="@drawable/ic_add12"
+                    android:paddingLeft="@dimen/padding_10"
+                    android:layout_marginLeft="@dimen/margin_left_20"
+                    android:text="Add"
+                    android:textColor="@color/teal_200"
+                    android:textSize="@dimen/textSizeSmall" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

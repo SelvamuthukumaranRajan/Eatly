@@ -1,0 +1,10 @@
+<resources>
+    <!--    <string name="app_name">DeliveryApp</string>-->
+
+    <string name="copyrightssymbol"> © </string>
+    <string name="copyrightswords">Delivery App. All Rights Reserved</string>
+
+    //Navigation Drawer
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

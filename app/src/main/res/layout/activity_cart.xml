@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        tools:context=".Cart">
+
+        <include
+            android:id="@+id/layout_actionBar"
+            layout="@layout/ab_normal" />
+
+        <LinearLayout
+            android:id="@+id/emptyCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_60"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/empty_cart" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="@dimen/margin_top_20"
+                android:text="Your Cart is Empty"
+                android:textAlignment="center"
+                android:textSize="@dimen/textSizeAbsoluteLarge" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/nonEmptyCart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey"
+                android:paddingBottom="170dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/padding_10"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvShopName"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/padding_10"
+                                android:text="Shop Name"
+                                android:textSize="@dimen/textSizeAbsoluteLarge"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tvAddMore"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableLeft="@drawable/ic_add12"
+                                android:drawablePadding="@dimen/padding_5"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/padding_10"
+                                android:text="Add More"
+                                android:textColor="@color/teal_200"
+                                android:textSize="@dimen/textSizeNormal"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/etInstructions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_top_5"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_edit"
+                        android:drawablePadding="@dimen/padding_10"
+                        android:hint="Any Instructions? Eg: Don't ring the door bell"
+                        android:padding="15dp"
+                        android:textSize="@dimen/textSizeLarge" />
+
+                    <ir.beigirad.zigzagview.ZigzagView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        app:zigzagBackgroundColor="@color/white"
+                        app:zigzagElevation="3dp"
+                        app:zigzagHeight="7dp"
+                        app:zigzagPaddingContent="14dp"
+                        app:zigzagShadowAlpha="0.9"
+                        app:zigzagSides="bottom">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_top_5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/padding_10"
+                                android:text="Payment Details"
+                                android:textSize="@dimen/textSizeAbsoluteLarge"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="Item Total"
+                                        android:textSize="@dimen/textSizeLarge"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.4"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvItemPrice"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center_vertical"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="Price"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/textSizeLarge" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginLeft="@dimen/padding_left_10"
+                                android:layout_marginRight="@dimen/padding_right_10"
+                                android:background="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="Packing"
+                                        android:textSize="@dimen/textSizeLarge"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.4"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvPackingPrice"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center_vertical"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="Price"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/textSizeLarge" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginLeft="@dimen/padding_left_10"
+                                android:layout_marginRight="@dimen/padding_right_10"
+                                android:background="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="Partner Delivery Fee"
+                                        android:textSize="@dimen/textSizeLarge"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.4"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvDeliveryPrice"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center_vertical"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="Price"
+                                        android:textColor="@color/teal_200"
+                                        android:textSize="@dimen/textSizeLarge" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_marginLeft="@dimen/padding_left_10"
+                                android:layout_marginRight="@dimen/padding_right_10"
+                                android:background="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.6"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="To Pay"
+                                        android:textSize="@dimen/textSizeLarge"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.4"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvFinalPrice"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center_vertical"
+                                        android:padding="@dimen/padding_10"
+                                        android:text="Price"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/textSizeLarge" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ir.beigirad.zigzagview.ZigzagView>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top_10"
+                    android:drawableLeft="@drawable/ic_location"
+                    android:drawableRight="@drawable/ic_down_arrow"
+                    android:drawablePadding="@dimen/padding_10"
+                    android:padding="@dimen/padding_5"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Address Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeAbsoluteLarge" />
+
+                <TextView
+                    android:id="@+id/tvAddressDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_left_40"
+                    android:paddingTop="@dimen/padding_5"
+                    android:text="Address"
+                    android:textSize="@dimen/textSizeNormal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_left_40"
+                    android:paddingTop="@dimen/padding_5"
+                    android:text="Time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeLarge" />
+
+                <Button
+                    android:id="@+id/btPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginLeft="@dimen/margin_left_30"
+                    android:layout_marginTop="@dimen/margin_top_10"
+                    android:layout_marginRight="@dimen/margin_right_30"
+                    android:layout_marginBottom="@dimen/margin_bottom_10"
+                    android:background="@drawable/rounded_button"
+                    android:text="Continue to Payment" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

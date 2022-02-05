@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/grey"
+        tools:context=".ProfileSettings">
+
+        <include
+            android:id="@+id/layout_actionBar"
+            layout="@layout/ab_right_button" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_user"
+            android:layout_marginTop="@dimen/margin_top_20" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/margin_right_20" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textColor="@color/black"
+            android:padding="@dimen/padding_10"
+            android:layout_marginLeft="@dimen/margin_left_10"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Address"
+            android:textColor="@color/black"
+            android:padding="@dimen/padding_10"
+            android:layout_marginLeft="@dimen/margin_left_10"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9678887398"
+            android:textColor="@color/black"
+            android:padding="@dimen/padding_10"
+            android:layout_marginLeft="@dimen/margin_left_10"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:layout_marginTop="@dimen/margin_top_10"
+            android:padding="@dimen/padding_10"
+            android:textSize="@dimen/textSizeLarge" />-->
+
+    </LinearLayout>
+</layout>
